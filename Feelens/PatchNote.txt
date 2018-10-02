@@ -1,5 +1,0 @@
-30.09.2018
-- Criação do projeto
-- Estruturação e design da tela de Login, Cadastro
-- Estruturação parcialmente completa na tela de Login
-- Design parcialmente completo na tela de Feed
