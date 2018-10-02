@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Esta tela sim, foi construída do zero
+
+    Comecei com um ImageView que será usado como imagem de capa (um fundo preto, pra simular a imagem)
+    Por enquanto, não inseri nenhuma função de scroll ou algo do tipo, portanto, a capa fica fixa na tela
+
+    Inseri dois botões no topo da página, com aparência genérica
+    Um deles para voltar para o feed, e o outro para acessar as configurações
+
+    Depois disso, dois TextView.
+    Um deles com o nome do usuário, e o outro com o nível do mesmo.
+
+    Adicionei também a foto de perfil circular centralizada através de uma biblioteca de terceiros.
+    A source da imagem por enquanto é a padrão do Android, mas, posteriormente deve ser substituida pela imagem correspondente no BD
+
+    A ProgressBar eu copiei e colei do projeto antigo.
+
+    Além disso tudo, tentei me aventurar um pouco na missão de inserir as abas de visualização
+    Uma para visualizar as publicações em grid, outra para ver os álbuns do usuário, e a última para ver as notificações
+    Obtive sucesso parcial. As abas funcionam e é possível navegar entre elas.
+    Porém, falta determinar o que cada uma vai mostrar nos arquivos albumstab.xml, gridtab.xml e notificationtab.xml
+
+    O que falta fazer:
+        * Finalizar o esquema de abas
+        * Tornar a tela "scrollável"
+        * Mostrar as informações de acordo com o BD
+        * Alguma forma de diferenciar telas de perfil pessoal e perfil de outro usuário (outra activity? alguma condição que limite as abas?)
+
+    Vinicius Estelionato - 30.09.2018
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.amadeus.feelens.ProfileActivity">
+
+
+    <ImageView
+        android:id="@+id/imgCover"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        app:srcCompat="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/txtLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/progressBar"
+        android:layout_marginVertical="250dp"
+        android:text="24"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
+
+    <ImageButton
+        android:id="@+id/imgBtnBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/progressBar"
+        android:layout_marginHorizontal="0dp"
+        android:layout_marginVertical="250dp"
+        android:text="Vinicius Estelionato"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="false"
+        android:layout_marginVertical="125dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="290dp"
+        android:maxWidth="300dip"
+        android:minWidth="300dip"
+        android:progress="25"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <ImageButton
+        android:id="@+id/imgBtnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true">
+
+        <android:android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            layout_height="100dp"
+            layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginTop="50dp" />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

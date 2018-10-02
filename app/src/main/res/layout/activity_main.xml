@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Este XML corresponde a tela principal do App, que contém o feed de publicações
+    Por enquanto, sem o sistema de login e cadastro, não existe nenhuma restrição para esta tela
+
+    Essa tela é composta basicamente por:
+        * Toolbar:
+            É a barra de tarefas que se localiza no topo da tela.
+            Dentro dela, inseri um ImageButton, que deve levar para a tela de Perfil do Usuário
+
+        * Floating Action Button
+            É o botão de ação, locaizado no canto inferior direito na tela
+            Por enquanto, sem os arquivos drawable, os botões ficam com a cor sólida primária do aplicativo
+            Após a implementação, a mudança é fácil de ser feita
+
+            São quatro botões:
+                * fabMain:
+                    É o botão principal, e no primeiro momento, o único visível.
+                    É o responsável pela animação de aparição dos outros três botões
+
+                * fabCamera
+                    Quando clicado, deve iniciar a aplicação de Camera
+
+                * fabTask
+                    Quando clicado, deve iniciar a tela de Task
+
+                * fabSearch
+                    Quando clicado, deve abrir a tela de pesquisa
+
+                Todos os botões, com exceção do Main, devem iniciar com o atributo android:visibility com valor de "invisible"
+                E, quando o Main for clicado, deve ser alternado este valor.
+
+            * Um Frame Layout com um ListView:
+                Este ListView é aonde ocorre toda a magia. Ele é o responsável por puxar as publicações do BD e mostrar no App.
+
+    O que falta ser feito:
+        * Finalizar a customização dos FAB:
+            Determinar o tamanho de cada um deles
+            Inserir seus respectivos ícones
+            Implementar a animação pelo arquivo Java
+
+        * Importar os arquivos de imagem
+        * Importação do banco de dados:
+        * Desenvolvimento do ListView
+
+        Além disso, é interessante ir pensando em maneiras de ordenar as publicações
+        Hot, new, top, best e controversial? Precisa pensar como vai ser o algoritmo
+
+        Vinicius Estelionato - 30.09.2018
+-->
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.amadeus.feelens.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ImageButton
+            android:id="@+id/btnProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:srcCompat="@mipmap/ic_launcher_round"
+            tools:layout_editor_absoluteX="288dp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMain"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabSearch"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="25dp"
+        android:visibility="visible"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCamera"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="100dp"
+        android:visibility="visible"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabTask"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="80dp"
+        android:visibility="visible"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+
+</android.support.constraint.ConstraintLayout>

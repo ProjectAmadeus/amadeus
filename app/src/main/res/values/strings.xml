@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Feelens</string>
+
+    <string name="logo">Logo</string>
+    <string name="welcome_to_feelens">Bem-vindo ao Feelens!</string>
+    <string name="sign_in_and_explore_the_world">Entre e explore o mundo!</string>
+    <string name="username_or_email">Nome de usuário</string>
+    <string name="password">Senha</string>
+    <string name="login">Login</string>
+    <string name="empty_login_or_password">Este campo e necessario!</string>
+    <string name="sign_up_now">Registre-se agora!</string>
+
+    <string name="first_name">Nome</string>
+    <string name="last_name">Sobrenome</string>
+    <string name="username">Nome de usuário</string>
+    <string name="email">Email</string>
+    <string name="register">Registrar-se</string>
+    <string name="i_accept_the_terms_of_service">Eu li e aceito os Termos e Condições de serviço.</string>
+
+    <string-array name="tab_title">
+        <item>Grid</item>
+        <item>Albums</item>
+        <item>Notifications</item>
+
+    </string-array>
+
+</resources>
