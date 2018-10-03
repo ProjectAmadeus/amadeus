@@ -3,7 +3,7 @@ package com.amadeus.feelens;
 public class Task {
     private String taskName = "";
     private String taskDesc = "";
-
+    final private int taskHeight = 250;
     private int taskNumComplete;
     //Latitude e longitude
     private double taskLat, taskLon;
@@ -30,4 +30,6 @@ public class Task {
     public double getTaskLon() {
         return taskLon;
     }
+
+    public int getTaskHeight() { return taskHeight; }
 }

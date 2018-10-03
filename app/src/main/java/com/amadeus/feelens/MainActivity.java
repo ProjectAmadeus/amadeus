@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         fabTask = (FloatingActionButton)findViewById(R.id.fabTask);
         fabSearch = (FloatingActionButton)findViewById(R.id.fabSearch);
 
+        fabTask.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, TasksActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+
     }
 
 }

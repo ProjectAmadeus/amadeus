@@ -6,21 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.amadeus.feelens.TasksActivity">
 
-    <ScrollView
-        android:layout_width="371dp"
-        android:layout_height="555dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+
+        <GridView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+            android:layout_height="250dp"
+            android:background="@color/red"
+            android:visibility="visible" />
+
 </android.support.constraint.ConstraintLayout>
