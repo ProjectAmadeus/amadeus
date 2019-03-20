@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "379885242947",
+    "firebase_url": "https://project-amadeus.firebaseio.com",
+    "project_id": "project-amadeus",
+    "storage_bucket": "project-amadeus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379885242947:android:f192d7ff2ce0c6e3",
+        "android_client_info": {
+          "package_name": "com.amadeus.feelens"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyFD48rXjzNwTPzMeItQNhN0AjlVhyO5c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
