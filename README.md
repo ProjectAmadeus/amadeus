@@ -1,2 +1,2 @@
 # amadeus
-- Added Tasks / Tasks Activity;
+- Linked project with Firebase;
