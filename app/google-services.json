@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "379885242947-irbqd0q0ms8c26qrde7ntgmiibkougsn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amadeus.feelens",
+            "certificate_hash": "a5120440561423451ef01d227956b425bd6eb72d"
+          }
+        },
+        {
           "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
