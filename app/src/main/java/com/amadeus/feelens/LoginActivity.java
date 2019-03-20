@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                 LoginActivity.this.startActivity(startMainFeed);
                 finish();
 
+                //Checkar link com o Firebase
                 Bundle params = new Bundle();
                 params.putString("username", etEmail.getText().toString());
                 params.putString("password", etPassword.getText().toString());
