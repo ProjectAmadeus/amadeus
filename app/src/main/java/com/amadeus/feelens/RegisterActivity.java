@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class RegisterActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
+public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,17 +22,23 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
-
         final Button bRegister = (Button) findViewById(R.id.bRegister);
+
+
+
 
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                 Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                //Intent i = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
         });
 
+        
+
     }
+
 }
+

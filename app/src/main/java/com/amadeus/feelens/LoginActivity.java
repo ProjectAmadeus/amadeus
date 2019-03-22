@@ -11,9 +11,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
+    private FirebaseAuth firebaseAuth;
+
     /* Aqui também não alterei nada.
        Apenas copiei o código que recebi da última versão do projeto */
     boolean emailTrue = false, pwTrue = false;
@@ -22,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
@@ -29,15 +34,16 @@ public class LoginActivity extends AppCompatActivity {
         final String strPasssword = etPassword.getText().toString();
         final Button bLogin = (Button) findViewById(R.id.bLogin);
         final String logpassError = getResources().getString(R.string.empty_login_or_password);
-        final TextView signUp = (TextView) findViewById(R.id.tvSignUp);
+        final Button bRegister = (Button) findViewById(R.id.btnSignUp);
 
 
 
-        signUp.setOnClickListener(new View.OnClickListener(){
+
+        bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-//                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-//                LoginActivity.this.startActivity(registerIntent);
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                LoginActivity.this.startActivity(registerIntent);
             }
         });
 
@@ -130,6 +136,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
+    }
+    @Override
+    public void onStart(){
+        super.onStart();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
     }
 
