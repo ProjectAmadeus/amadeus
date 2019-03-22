@@ -1,2 +1,2 @@
 # amadeus
-- Linked project with Firebase;
+- Added Firebase Authentication;
