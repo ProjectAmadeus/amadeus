@@ -10,14 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth firebaseAuth;
-
+    private int RC_SIGN_IN = 1;
     /* Aqui também não alterei nada.
        Apenas copiei o código que recebi da última versão do projeto */
     boolean emailTrue = false, pwTrue = false;
@@ -36,14 +41,34 @@ public class LoginActivity extends AppCompatActivity {
         final String logpassError = getResources().getString(R.string.empty_login_or_password);
         final Button bRegister = (Button) findViewById(R.id.btnSignUp);
 
+        final List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build());
+
+
+        if(firebaseAuth.getCurrentUser() != null){
+            Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
+            LoginActivity.this.startActivity(startMainFeed);
+        }
+
+
+
+
+
 
 
 
         bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                LoginActivity.this.startActivity(registerIntent);
+
+                startActivityForResult(
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setAvailableProviders(providers)
+                        .setLogo(R.drawable.ic_logo_feelens)
+                        .build(),
+                RC_SIGN_IN);
             }
         });
 
@@ -52,17 +77,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
-                LoginActivity.this.startActivity(startMainFeed);
-                finish();
+                    //Redireciona para o feed principal
+                    Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
+                    LoginActivity.this.startActivity(startMainFeed);
+                    finish();
 
-                //Checkar link com o Firebase
-                Bundle params = new Bundle();
-                params.putString("username", etEmail.getText().toString());
-                params.putString("password", etPassword.getText().toString());
-                mFirebaseAnalytics.logEvent("login_info", params);
 
-                bLogin.setEnabled(false);
+                    bLogin.setEnabled(false);
+
+
             }
         });
 
@@ -138,12 +161,38 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     public void onStart(){
         super.onStart();
-
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
+            if (resultCode == RESULT_OK) {
+                // Successfully signed in
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
+                LoginActivity.this.startActivity(startMainFeed);
+
+
+            } else {
+                // Sign in failed. If response is null the user canceled the
+                // sign-in flow using the back button. Otherwise check
+                // response.getError().getErrorCode() and handle the error.
+                // ...
+            }
+        }
+    }
+
+
+
 
 }
