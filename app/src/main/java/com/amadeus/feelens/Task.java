@@ -11,8 +11,7 @@ public class Task {
 
     //Getters
 
-    public int getTaskNumComplete() {
-        return taskNumComplete;
+    public int getTaskNumComplete() { return taskNumComplete;
     }
 
     public String getTaskName() {
