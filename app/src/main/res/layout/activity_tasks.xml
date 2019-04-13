@@ -6,11 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.amadeus.feelens.TasksActivity">
 
-        <ImageView
-            android:id="@+id/TaskSunsetTest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="141dp"
-            tools:layout_editor_absoluteY="73dp"
-            tools:srcCompat="@tools:sample/avatars" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/task_recycler_view"
+        />
 </android.support.constraint.ConstraintLayout>

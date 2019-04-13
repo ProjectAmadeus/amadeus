@@ -1,2 +1,3 @@
 # amadeus
-- Implemented Glide v3 (UNSTABLE);
+- Added RecyclerView to TaskActivity;
+- Imported PaginationScrollListener class to project tree;
