@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth firebaseAuth;
     private int RC_SIGN_IN = 1;
+
     /* Aqui também não alterei nada.
        Apenas copiei o código que recebi da última versão do projeto */
     boolean emailTrue = false, pwTrue = false;

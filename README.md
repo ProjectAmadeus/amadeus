@@ -1,3 +1,2 @@
 # amadeus
-- Added RecyclerView to TaskActivity;
-- Imported PaginationScrollListener class to project tree;
+- Implemented a method to creae a new TaskID (UNSTABLE);

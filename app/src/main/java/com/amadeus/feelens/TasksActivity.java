@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import com.amadeus.feelens.Task;
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,8 @@ public class TasksActivity extends AppCompatActivity {
     private boolean isLastPage = false;
     private int page = 0;
     RecyclerView myRecyclerView;
+    private DatabaseReference mDatabaseRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,9 @@ public class TasksActivity extends AppCompatActivity {
         //TODO: Criar um loop que exiba uma nova Task enquanto houver tasks no BD.
         //Exemplo de sintaxe do Glide:
         //Glide.with(getApplicationContext()).load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/220px-Sunset_2007-1.jpg").into(taskImage);
+
+        //Referencia pro banco de dados
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
 
         //Registrando o listener para qunado a tela for scrollada
@@ -54,5 +61,11 @@ public class TasksActivity extends AppCompatActivity {
                 return isLoading;
             }
         });
+    }
+
+
+    private void createNewTaskID(String taskID) {
+        Task task = new Task(taskID);
+        mDatabaseRef.child("Task/id_task").child(taskID).setValue(task);
     }
 }
