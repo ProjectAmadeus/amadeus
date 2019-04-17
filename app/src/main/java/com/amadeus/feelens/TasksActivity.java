@@ -1,4 +1,4 @@
-package com.amadeus.feelens;
+    package com.amadeus.feelens;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,8 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Random;
 
-public class TasksActivity extends AppCompatActivity {
+    public class TasksActivity extends AppCompatActivity {
     private boolean isLoading = false;
     private boolean isLastPage = false;
     private int page = 0;
@@ -37,6 +38,11 @@ public class TasksActivity extends AppCompatActivity {
 
         //Referencia pro banco de dados
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
+        Random r = new Random();
+        int idTest = r.nextInt(100);
+        String taskRandomID = Integer.toString(idTest);
+
+        // createNewTaskID(taskRandomID);
 
 
         //Registrando o listener para qunado a tela for scrollada
