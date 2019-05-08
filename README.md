@@ -1,2 +1,2 @@
 # amadeus
-- Implemented a method to creae a new TaskID (UNSTABLE);
+- Firebase data insertion working as intended. First task added succesfully.
