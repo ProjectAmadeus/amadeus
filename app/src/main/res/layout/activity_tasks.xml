@@ -7,13 +7,7 @@
     tools:context="com.amadeus.feelens.TasksActivity">
 
 
-    <Button
-        android:id="@+id/send_task_to_firebase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send task to Firebase"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="205dp" />
+
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

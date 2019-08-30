@@ -34,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
+
+        //XML layout references
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final String strEmail = etEmail.getText().toString();
@@ -42,27 +44,23 @@ public class LoginActivity extends AppCompatActivity {
         final String logpassError = getResources().getString(R.string.empty_login_or_password);
         final Button bRegister = (Button) findViewById(R.id.btnSignUp);
 
+        //Code snippet taken from Google Devs to create the Ui elements
         final List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
                 new AuthUI.IdpConfig.GoogleBuilder().build());
 
 
+        //Tests if the user is signed in
         if(firebaseAuth.getCurrentUser() != null){
             Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
             LoginActivity.this.startActivity(startMainFeed);
         }
 
 
-
-
-
-
-
-
         bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
+               //Draws the UI elements
                 startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
@@ -77,21 +75,17 @@ public class LoginActivity extends AppCompatActivity {
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                     //Redireciona para o feed principal
                     Intent startMainFeed = new Intent(LoginActivity.this, MainActivity.class);
                     LoginActivity.this.startActivity(startMainFeed);
                     finish();
 
-
                     bLogin.setEnabled(false);
-
-
             }
         });
 
+        //Checks if the text boxes are empty
         etEmail.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
@@ -142,34 +136,27 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 if(emailTrue && pwTrue){
                     bLogin.setEnabled(true);
-
                 }
             }
         });
-
-
-
-
-
     }
 
     @Override
     public void onStart(){
         super.onStart();
+        //Returns the current user token
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-
     }
 
+
+    //Snippet from Google Devs example
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

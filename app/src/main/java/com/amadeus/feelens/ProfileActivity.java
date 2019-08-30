@@ -16,6 +16,7 @@ import com.amadeus.feelens.adapters.MyPagerAdapter;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
+//TODO: Remover os fragmentos ja estabelecidos e implementar as novas convencoes de design com CardView
 
 public class ProfileActivity extends AppCompatActivity {
 
