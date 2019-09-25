@@ -39,6 +39,10 @@ import java.util.Random;
 
         //Referencia pro banco de dados
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
+        Random r = new Random();
+
+        int idTest = r.nextInt(100);
+        String taskRandomID = Integer.toString(idTest);
         loadTasksFromFirebase();
 
 
@@ -54,6 +58,8 @@ import java.util.Random;
                 System.out.println("Task Name: " + newTask.taskName);
                 System.out.println("Task Desc: " + newTask.taskDesc);
                 System.out.println("Task Exp: " + newTask.taskExp);
+                System.out.println("Task ID: " + s);
+
             }
 
             @Override
