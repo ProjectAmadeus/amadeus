@@ -1,6 +1,7 @@
 package com.amadeus.feelens;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,8 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Random;
 
     public class TasksActivity extends AppCompatActivity {
@@ -19,6 +25,7 @@ import java.util.Random;
     private int page = 0;
     RecyclerView myRecyclerView;
     private DatabaseReference mDatabaseRef;
+
 
 
     @Override
@@ -32,32 +39,41 @@ import java.util.Random;
 
         //Referencia pro banco de dados
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
-        Random r = new Random();
-        int idTest = r.nextInt(100);
-        String taskRandomID = Integer.toString(idTest);
-        // createNewTaskID(taskRandomID);
+        loadTasksFromFirebase();
 
 
-        //Registrando o listener para qunado a tela for scrollada
-        myRecyclerView.addOnScrollListener(new PaginationScrollListener((LinearLayoutManager) myRecyclerView.getLayoutManager()) {
+
+    }
+
+    void loadTasksFromFirebase(){
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Tasks/ids");
+        mDatabaseRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Task newTask = dataSnapshot.getValue(Task.class);
+                System.out.println("Task Name: " + newTask.taskName);
+                System.out.println("Task Desc: " + newTask.taskDesc);
+                System.out.println("Task Exp: " + newTask.taskExp);
             }
+
             @Override
-            protected void loadMoreItems() {
-                if (!isLoading && !isLastPage) {
-                    //TODO: criar a funcao para 'carregar' a proxima pagina
-                    //loadNextPage();
-                }
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
             }
+
             @Override
-            public boolean isLastPage() {
-                return isLastPage;
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
             }
+
             @Override
-            public boolean isLoading() {
-                return isLoading;
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
