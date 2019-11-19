@@ -11,21 +11,63 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.List;
 import java.util.Random;
 
     public class TasksActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
+    private RecyclerView mRecyclerView;
+    private FirebaseStorage mStorageRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
+        mStorageRef = FirebaseStorage.getInstance();
 
-        //TODO: Criar um loop que exiba uma nova Task enquanto houver tasks no BD.
+
+
+
+
+
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_tasks);
+        new FirebaseDatabaseHelper().readTasks(new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void DataIsLoaded(List<Task> tasks, List<String> keys) {
+                new RecyclerViewConfig().setConfig(mRecyclerView, TasksActivity.this, tasks, keys);
+            }
+
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+
+            @Override
+            public void DataIsDeleted() {
+
+            }
+        });
+
+
+
+
         //Exemplo de sintaxe do Glide:
         //Glide.with(getApplicationContext()).load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/220px-Sunset_2007-1.jpg").into(taskImage);
 
 
+    }
+
+    public void insertTaskImageView(){
+        
     }
 }

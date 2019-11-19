@@ -15,6 +15,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "379885242947-1gsle01bmmnqvtlfmvqflj88bhkc9rfa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amadeus.feelens",
+            "certificate_hash": "525f78e940533533d271b3fe6bc8ce696aaf27d3"
+          }
+        },
+        {
+          "client_id": "379885242947-2vkn28atm9mnad88irhi9g46a43im0cb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amadeus.feelens",
+            "certificate_hash": "b5166b78b015aaeb2be967dd1646066ba1d97872"
+          }
+        },
+        {
+          "client_id": "379885242947-lr8olsg3a3l27ffpm4n0l6l3lc29p8h9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amadeus.feelens",
+            "certificate_hash": "f5a87abc0a46260f81009fe71d51be98f13576e1"
+          }
+        },
+        {
           "client_id": "379885242947-irbqd0q0ms8c26qrde7ntgmiibkougsn.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -33,20 +57,50 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379885242947:android:4054864fe8b0e938",
+        "android_client_info": {
+          "package_name": "com.feelens.feelensparaparceiros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379885242947-36dba9glp6s3r183amhgbjjvbv8h8mlq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.feelens.feelensparaparceiros",
+            "certificate_hash": "dc271e203b941bd62217e04b2bddfa7b5ab9c8e0"
+          }
         },
-        "ads_service": {
-          "status": 2
+        {
+          "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyFD48rXjzNwTPzMeItQNhN0AjlVhyO5c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379885242947-bt7ad8m10tcb7ht3pjb5gtihdmbi8u9p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
