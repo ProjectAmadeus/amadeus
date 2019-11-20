@@ -43,6 +43,7 @@ public class RecyclerViewConfig {
     class TaskItemView extends RecyclerView.ViewHolder{
         private TextView mTitle;
         private TextView mExp;
+        private TextView mDesc;
 
         private String mId;
 
@@ -54,6 +55,7 @@ public class RecyclerViewConfig {
             mTitle = (TextView) itemView.findViewById(R.id.task_name_txt);
             mExp = (TextView) itemView.findViewById(R.id.task_exp_txt);
             mImageView = (ImageView) itemView.findViewById(R.id.task_image_view);
+            mDesc = (TextView) itemView.findViewById(R.id.task_desc_txt);
 
         }
 
@@ -61,6 +63,7 @@ public class RecyclerViewConfig {
             mTitle.setText(task.getTaskName());
             mExp.setText(task.getTaskExp());
             mId = task.getTaskId();
+            mDesc.setText(task.getTaskDesc());
 //            GlideApp.with(mContext).load(TasksActivity.getTaskUrl("001")).into(mImageView);
             this.key = key;
             System.out.println("NUMERO DE CHAVE: " + key);

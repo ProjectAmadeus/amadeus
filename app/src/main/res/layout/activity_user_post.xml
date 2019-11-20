@@ -8,40 +8,53 @@
 
     <ImageView
         android:id="@+id/ivPostImagePreview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="337dp"
+        android:layout_height="227dp"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="16dp"
         tools:srcCompat="@tools:sample/avatars[3]" />
 
     <Button
         android:id="@+id/btnPostPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:text="Postar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.869"
-        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="275dp"
         tools:layout_editor_absoluteY="609dp" />
 
     <EditText
         android:id="@+id/etPostDescription"
         android:layout_width="358dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="215dp" />
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="288dp" />
+
+    <Spinner
+        android:id="@+id/spinner_tasks"
+        android:layout_width="244dp"
+        android:layout_height="30dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecionar Task:"
+        android:textColor="#FFC107"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="354dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição"
+        android:textColor="#FFC107"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="268dp" />
+
 </android.support.constraint.ConstraintLayout>
