@@ -1,5 +1,6 @@
 package com.amadeus.feelens;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,14 +21,14 @@ import java.util.Random;
     public class TasksActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
     private RecyclerView mRecyclerView;
-    private FirebaseStorage mStorageRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
-        mStorageRef = FirebaseStorage.getInstance();
+
+
 
 
 
@@ -58,16 +59,15 @@ import java.util.Random;
             }
         });
 
-
-
-
         //Exemplo de sintaxe do Glide:
         //Glide.with(getApplicationContext()).load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/220px-Sunset_2007-1.jpg").into(taskImage);
-
-
     }
 
-    public void insertTaskImageView(){
-        
+    public static String getTaskUrl (String taskId){
+        // Points to the root reference
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+        StorageReference taskRef = storageRef.child("/images/" + taskId + ".jpeg");
+        return taskRef.toString();
     }
+
 }

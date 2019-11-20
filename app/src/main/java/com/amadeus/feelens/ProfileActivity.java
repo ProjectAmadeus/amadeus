@@ -31,12 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        // Código necessário para o funcionamento das abas
-        tabLayout = (TabLayout)findViewById(R.id.tabLayout);
-        viewPager = (ViewPager)findViewById(R.id.viewPager);
-
-        viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager(), getResources().getStringArray(R.array.tab_title)));
-        tabLayout.setupWithViewPager(viewPager);
 
         // Configuração dos botões superiores
         btnBack = (ImageButton)findViewById(R.id.imgBtnBack);

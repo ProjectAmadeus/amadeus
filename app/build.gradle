@@ -37,6 +37,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.android.support:recyclerview-v7:26.0.0'
     implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.firebaseui:firebase-ui-storage:3.3.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

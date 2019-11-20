@@ -10,10 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.Registry;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+
+import java.io.InputStream;
 import java.util.List;
 
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
@@ -35,6 +41,7 @@ public class RecyclerViewConfig {
         private TextView mTitle;
         private TextView mExp;
         private ImageView mImageView;
+        private String mId;
 
         private String key;
 
@@ -50,7 +57,8 @@ public class RecyclerViewConfig {
         public void bind(Task task, String key){
             mTitle.setText(task.getTaskName());
             mExp.setText(task.getTaskExp());
-            Glide.with(mContext).load("gs://project-amadeus.appspot.com/images/taskid:001").into(mImageView);
+            mId = task.getTaskId();
+//            GlideApp.with(mContext).load(TasksActivity.getTaskUrl("001")).into(mImageView);
             this.key = key;
         }
     }
@@ -80,4 +88,8 @@ public class RecyclerViewConfig {
             return mTaskList.size();
         }
     }
+
+
 }
+
+
