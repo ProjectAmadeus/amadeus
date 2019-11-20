@@ -28,14 +28,6 @@ import java.util.Random;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
-
-
-
-
-
-
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_tasks);
         new FirebaseDatabaseHelper().readTasks(new FirebaseDatabaseHelper.DataStatus() {
             @Override
@@ -58,6 +50,8 @@ import java.util.Random;
 
             }
         });
+
+
 
         //Exemplo de sintaxe do Glide:
         //Glide.with(getApplicationContext()).load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/220px-Sunset_2007-1.jpg").into(taskImage);

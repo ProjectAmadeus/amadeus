@@ -12,9 +12,6 @@
         android:layout_height="186dp"
         android:layout_marginStart="42dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="42dp"
-        app:layout_constraintBottom_toTopOf="@+id/task_name_txt"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -24,14 +21,10 @@
         android:layout_width="330dp"
         android:layout_height="33dp"
         android:layout_marginStart="42dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="473dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFC107"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_image_view" />
 
@@ -39,11 +32,18 @@
         android:id="@+id/task_exp_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginBottom="454dp"
+        android:layout_marginStart="40dp"
         android:text="TextView"
         android:textColor="#FFC107"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_name_txt" />
+
+    <TextView
+        android:id="@+id/task_desc_txt"
+        android:layout_width="333dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="40dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/task_exp_txt" />
 </android.support.constraint.ConstraintLayout>
