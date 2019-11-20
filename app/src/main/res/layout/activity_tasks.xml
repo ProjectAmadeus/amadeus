@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context="com.amadeus.feelens.TasksActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_tasks"
+        android:layout_width="395dp"
+        android:layout_height="651dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-
-        <GridView
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="@color/red"
-            android:visibility="visible" />
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Tasks"
+        android:textColor="#FF9800"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

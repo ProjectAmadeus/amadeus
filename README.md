@@ -1,2 +1,2 @@
 # amadeus
-- Added Tasks / Tasks Activity;
+- Firebase data insertion working as intended. First task added succesfully.

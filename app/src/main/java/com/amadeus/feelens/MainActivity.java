@@ -9,17 +9,24 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton btnProfile;
-    private FloatingActionButton fabMain, fabCamera, fabTask, fabSearch;
+
+    private FloatingActionButton fabMain, fabPerfil, fabTask, fabSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Identificação e funcionamento do botão que envia o usuário para o seu perfil
-        btnProfile = (ImageButton) findViewById(R.id.btnProfile);
-        btnProfile.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        // Identificação dos FAB
+        fabMain = (FloatingActionButton)findViewById(R.id.fabMain);
+        fabPerfil = (FloatingActionButton)findViewById(R.id.fabPerfil);
+        fabTask = (FloatingActionButton)findViewById(R.id.fabTask);
+
+        fabPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ProfileActivity.class);
@@ -27,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Identificação dos FAB
-        fabMain = (FloatingActionButton)findViewById(R.id.fabMain);
-        fabCamera = (FloatingActionButton)findViewById(R.id.fabCamera);
-        fabTask = (FloatingActionButton)findViewById(R.id.fabTask);
-        fabSearch = (FloatingActionButton)findViewById(R.id.fabSearch);
 
         fabTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

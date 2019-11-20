@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Camargo\Documents\GitHub\amadeus\Feelens.iml" filepath="C:\Users\Camargo\Documents\GitHub\amadeus\Feelens.iml" />
       <module fileurl="file://$PROJECT_DIR$/amadeus.iml" filepath="$PROJECT_DIR$/amadeus.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\Camargo\Documents\GitHub\amadeus\app\app.iml" filepath="C:\Users\Camargo\Documents\GitHub\amadeus\app\app.iml" />
     </modules>
   </component>
 </project>
