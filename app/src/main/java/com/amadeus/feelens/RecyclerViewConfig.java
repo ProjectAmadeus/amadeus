@@ -1,6 +1,7 @@
 package com.amadeus.feelens;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Registry;
@@ -33,6 +35,15 @@ public class RecyclerViewConfig {
     private Context mContext;
     private TaskAdapter mTaskAdapter;
     private ImageView mImageView;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+    }
 
     public void setConfig(RecyclerView recyclerView, Context context, List<Task> tasks, List<String> keys){
         mContext = context;
@@ -41,7 +52,7 @@ public class RecyclerViewConfig {
         recyclerView.setAdapter(mTaskAdapter);
     }
 
-    class TaskItemView extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class TaskItemView extends RecyclerView.ViewHolder{
         private TextView mTitle;
         private TextView mExp;
         private TextView mDesc;
@@ -50,15 +61,24 @@ public class RecyclerViewConfig {
 
         private String key;
 
-        public TaskItemView(ViewGroup parent){
+        public TaskItemView(ViewGroup parent, final OnItemClickListener listener){
             super(LayoutInflater.from(mContext).inflate(R.layout.task_list_item, parent, false));
 
             mTitle = (TextView) itemView.findViewById(R.id.task_name_txt);
             mExp = (TextView) itemView.findViewById(R.id.task_exp_txt);
             mImageView = (ImageView) itemView.findViewById(R.id.task_image_view);
             mDesc = (TextView) itemView.findViewById(R.id.task_desc_txt);
-
-            itemView.setOnClickListener(this);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
 
         }
 
@@ -69,10 +89,7 @@ public class RecyclerViewConfig {
             mDesc.setText(task.getTaskDesc());
             this.key = key;
             System.out.println("NUMERO DE CHAVE: " + key);
-        }
 
-        @Override
-        public void onClick(View view) {
 
         }
     }
@@ -90,7 +107,7 @@ public class RecyclerViewConfig {
         @NonNull
         @Override
         public TaskItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new TaskItemView(parent);
+            return new TaskItemView(parent, mListener);
         }
 
         @Override
@@ -106,6 +123,17 @@ public class RecyclerViewConfig {
                     Glide.with(mContext).load(uri).into(mImageView);
                 }
             });
+
+            setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    System.out.println("POSIÇAO CLICADA: " +mTaskList.get(position));
+                    Intent intent = new Intent(mContext, InviteFriendsActivity.class);
+                    Toast.makeText(mContext, "Task aceita!", Toast.LENGTH_SHORT).show();
+                    mContext.startActivity(intent);
+                }
+            });
+
         }
 
 
@@ -117,9 +145,7 @@ public class RecyclerViewConfig {
 
     }
 
-    public interface OnTaskListener{
-        void OnNoteClick(int position);
-    }
+
 }
 
 

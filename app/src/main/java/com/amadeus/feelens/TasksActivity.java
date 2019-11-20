@@ -1,6 +1,5 @@
 package com.amadeus.feelens;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +18,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.List;
 import java.util.Random;
 
-    public class TasksActivity extends AppCompatActivity implements RecyclerViewConfig.OnTaskListener {
+    public class TasksActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
     private RecyclerView mRecyclerView;
 
@@ -54,8 +53,7 @@ import java.util.Random;
 
 
 
-        //Exemplo de sintaxe do Glide:
-        //Glide.with(getApplicationContext()).load("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Sunset_2007-1.jpg/220px-Sunset_2007-1.jpg").into(taskImage);
+
     }
 
     public static String getTaskUrl (String taskId){
@@ -65,9 +63,4 @@ import java.util.Random;
         return taskRef.toString();
     }
 
-        @Override
-        public void OnNoteClick(int position) {
-            Intent intent = new Intent(this, InviteFriendsActivity.class);
-            startActivity(intent);
-        }
-    }
+}
