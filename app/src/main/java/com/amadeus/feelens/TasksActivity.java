@@ -1,5 +1,6 @@
 package com.amadeus.feelens;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.List;
 import java.util.Random;
 
-    public class TasksActivity extends AppCompatActivity {
+    public class TasksActivity extends AppCompatActivity implements RecyclerViewConfig.OnTaskListener {
     private DatabaseReference mDatabaseRef;
     private RecyclerView mRecyclerView;
 
@@ -64,4 +65,9 @@ import java.util.Random;
         return taskRef.toString();
     }
 
-}
+        @Override
+        public void OnNoteClick(int position) {
+            Intent intent = new Intent(this, InviteFriendsActivity.class);
+            startActivity(intent);
+        }
+    }

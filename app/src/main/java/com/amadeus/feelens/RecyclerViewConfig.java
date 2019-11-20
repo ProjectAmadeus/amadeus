@@ -16,6 +16,7 @@ import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.common.internal.ViewUtils;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -40,7 +41,7 @@ public class RecyclerViewConfig {
         recyclerView.setAdapter(mTaskAdapter);
     }
 
-    class TaskItemView extends RecyclerView.ViewHolder{
+    class TaskItemView extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView mTitle;
         private TextView mExp;
         private TextView mDesc;
@@ -57,6 +58,8 @@ public class RecyclerViewConfig {
             mImageView = (ImageView) itemView.findViewById(R.id.task_image_view);
             mDesc = (TextView) itemView.findViewById(R.id.task_desc_txt);
 
+            itemView.setOnClickListener(this);
+
         }
 
         public void bind(Task task, String key){
@@ -64,10 +67,12 @@ public class RecyclerViewConfig {
             mExp.setText(task.getTaskExp());
             mId = task.getTaskId();
             mDesc.setText(task.getTaskDesc());
-//            GlideApp.with(mContext).load(TasksActivity.getTaskUrl("001")).into(mImageView);
             this.key = key;
             System.out.println("NUMERO DE CHAVE: " + key);
+        }
 
+        @Override
+        public void onClick(View view) {
 
         }
     }
@@ -103,12 +108,17 @@ public class RecyclerViewConfig {
             });
         }
 
+
+
         @Override
         public int getItemCount() {
             return mTaskList.size();
         }
 
+    }
 
+    public interface OnTaskListener{
+        void OnNoteClick(int position);
     }
 }
 
