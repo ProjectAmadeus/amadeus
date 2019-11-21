@@ -10,8 +10,8 @@
         android:id="@+id/ivPostImagePreview"
         android:layout_width="337dp"
         android:layout_height="227dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="144dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars[3]" />
@@ -20,9 +20,13 @@
         android:id="@+id/btnPostPhoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/colorAccent"
         android:text="Postar"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="609dp" />
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPostDescription" />
 
     <EditText
         android:id="@+id/etPostDescription"
@@ -65,5 +69,18 @@
         android:textColor="#FFC107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivPostImagePreview" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="32dp"
+        android:text="Postar foto"
+        android:textColor="#FFC107"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Postar foto" />
 
 </android.support.constraint.ConstraintLayout>

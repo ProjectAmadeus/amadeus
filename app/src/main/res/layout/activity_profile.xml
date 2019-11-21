@@ -105,22 +105,6 @@
         android:background="#CBF0C432"
         app:srcCompat="@android:drawable/ic_menu_manage" />
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="50dp" />
-
-    </FrameLayout>
-
     <Button
         android:id="@+id/btnSignOut"
         style="@android:style/Widget.Material.Light.Button.Small"
@@ -130,6 +114,33 @@
         android:text="Sign Out"
         android:textColor="#FDFDFD"
         tools:text="Sign Out" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/profile_post_desc"
+            android:layout_width="401dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="650dp"
+            android:textColor="#FFC107"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profile_post_image"
+            android:layout_width="0dp"
+            android:layout_height="321dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_post_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:color/transparent" />
+    </android.support.constraint.ConstraintLayout>
 
 
 </RelativeLayout>
