@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.amadeus.feelens.adapters.MyPagerAdapter;
+import com.bumptech.glide.Glide;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,11 +37,15 @@ public class ProfileActivity extends AppCompatActivity {
 
         TextView postDesc = (TextView) findViewById(R.id.profile_post_desc);
         ImageView postImage = (ImageView) findViewById(R.id.profile_post_image);
+        ImageView erickWall = (ImageView) findViewById(R.id.imgCover);
+
 
         // Configuração dos botões superiores
         btnBack = (ImageButton)findViewById(R.id.imgBtnBack);
         btnSettings = (ImageButton)findViewById(R.id.imgBtnSettings);
         btnSignOut = (Button)findViewById(R.id.btnSignOut);
+
+        Glide.with(getApplicationContext()).load(R.drawable.erick_wall).into(erickWall);
 
         // Botão para voltar
         btnBack.setOnClickListener(new View.OnClickListener() {

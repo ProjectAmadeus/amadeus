@@ -98,7 +98,7 @@
         android:id="@+id/fabMain"
         android:layout_width="71dp"
         android:layout_height="64dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="332dp"
         android:layout_marginBottom="16dp"
         android:src="@android:drawable/ic_menu_camera"
         app:fabSize="normal"
@@ -107,9 +107,9 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabPerfil"
-        android:layout_width="47dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="356dp"
         android:layout_marginBottom="4dp"
         android:visibility="visible"
         app:fabSize="mini"
@@ -121,7 +121,7 @@
         android:id="@+id/fabTask"
         android:layout_width="46dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="292dp"
         android:layout_marginBottom="4dp"
         android:visibility="visible"
         app:fabSize="mini"
@@ -143,11 +143,12 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="421dp"
+        android:layout_width="0dp"
         android:layout_height="277dp"
         android:layout_marginTop="28dp"
         android:foreground="@drawable/trending_gradient_shape"
         android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/task009" />

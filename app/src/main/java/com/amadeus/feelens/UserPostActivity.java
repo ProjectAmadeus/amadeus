@@ -23,7 +23,7 @@ public class UserPostActivity extends AppCompatActivity {
         ImageView postImage = (ImageView) findViewById(R.id.ivPostImagePreview);
         Spinner taskSpinner = (Spinner) findViewById(R.id.spinner_tasks);
         final EditText postDesc = (EditText) findViewById(R.id.etPostDescription);
-        String[] spinnerTasks = new String[]{"Mooca Burger", "Casarão do Vinil"};
+        String[] spinnerTasks = new String[]{"Mooca Burger", "Casarão do Vinil", "Antigo Cotonifício"};
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, spinnerTasks);

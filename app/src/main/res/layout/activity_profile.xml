@@ -43,7 +43,8 @@
         android:id="@+id/imgCover"
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        app:srcCompat="@color/colorPrimaryDark" />
+        android:scaleType="centerCrop"
+        app:srcCompat="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/txtLevel"
@@ -121,25 +122,73 @@
 
         <TextView
             android:id="@+id/profile_post_desc"
-            android:layout_width="401dp"
+            android:layout_width="333dp"
             android:layout_height="60dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="650dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="652dp"
+            android:layout_marginEnd="8dp"
             android:textColor="#FFC107"
             android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.129"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/profile_post_image"
             android:layout_width="0dp"
-            android:layout_height="321dp"
-            android:layout_marginBottom="60dp"
-            app:layout_constraintBottom_toBottomOf="@+id/profile_post_desc"
+            android:layout_height="228dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/profile_post_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="74dp"
+            android:layout_marginTop="340dp"
+            android:background="#FFC107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="50dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="340dp"
+            android:background="#40FFC107"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_compass" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="50dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="340dp"
+            android:background="#40FFC107"
+            app:layout_constraintStart_toEndOf="@+id/imageButton5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="50dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="340dp"
+            android:background="#40FFC107"
+            app:layout_constraintStart_toEndOf="@+id/imageButton6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_popup_reminder" />
+
     </android.support.constraint.ConstraintLayout>
 
 

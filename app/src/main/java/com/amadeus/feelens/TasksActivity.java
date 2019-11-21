@@ -2,6 +2,7 @@ package com.amadeus.feelens;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +29,7 @@ import java.util.Random;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasks);
 
+
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_tasks);
         new FirebaseDatabaseHelper().readTasks(new FirebaseDatabaseHelper.DataStatus() {
             @Override
@@ -50,10 +52,6 @@ import java.util.Random;
 
             }
         });
-
-
-
-
     }
 
     public static String getTaskUrl (String taskId){

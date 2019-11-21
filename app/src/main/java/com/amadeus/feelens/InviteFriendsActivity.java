@@ -4,7 +4,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 public class InviteFriendsActivity extends AppCompatActivity {
 
@@ -15,6 +18,13 @@ public class InviteFriendsActivity extends AppCompatActivity {
         FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
         FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fab2);
         FloatingActionButton fab3 = (FloatingActionButton) findViewById(R.id.fab3);
+        ImageView img1 = (ImageView) findViewById(R.id.iv1);
+        ImageView img2 = (ImageView) findViewById(R.id.iv2);
+        ImageView img3 = (ImageView) findViewById(R.id.iv3);
+
+        Glide.with(getApplicationContext()).load(R.drawable.giovanni_wall).into(img1);
+        Glide.with(getApplicationContext()).load(R.drawable.joao_wall).into(img2);
+        Glide.with(getApplicationContext()).load(R.drawable.kaick_wall).into(img3);
 
 
         fab1.setOnClickListener(new View.OnClickListener() {

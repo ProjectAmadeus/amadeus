@@ -28,4 +28,52 @@
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabMain2"
+        android:layout_width="71dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="332dp"
+        android:layout_marginBottom="16dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabPerfil2"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="356dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="visible"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/erick_perfil" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabTask2"
+        android:layout_width="46dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="292dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="visible"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_compass" />
 </android.support.constraint.ConstraintLayout>
