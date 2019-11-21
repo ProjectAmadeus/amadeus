@@ -168,7 +168,7 @@
             app:srcCompat="@android:drawable/ic_menu_compass" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/btnFriendList"
             android:layout_width="50dp"
             android:layout_height="49dp"
             android:layout_marginStart="19dp"
@@ -185,7 +185,7 @@
             android:layout_marginStart="18dp"
             android:layout_marginTop="340dp"
             android:background="#40FFC107"
-            app:layout_constraintStart_toEndOf="@+id/imageButton6"
+            app:layout_constraintStart_toEndOf="@+id/btnFriendList"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/ic_popup_reminder" />
 

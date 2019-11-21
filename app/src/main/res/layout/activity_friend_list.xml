@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FriendListActivity">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Lista de amigos"
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="381dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="65dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv1"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="381dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="49dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/iv3"
+        android:layout_width="381dp"
+        android:layout_height="154dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="67dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv2"
+        app:srcCompat="@color/colorPrimary" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile1"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="125dp"
+        android:src="@drawable/kaick_perfil"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv3"
+        app:layout_constraintEnd_toEndOf="@+id/iv3"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/iv3"
+        app:layout_constraintTop_toTopOf="@+id/iv3"
+        tools:src="@drawable/kaick_perfil" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile2"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="125dp"
+        android:src="@drawable/giovanni_perfil"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv1"
+        app:layout_constraintEnd_toEndOf="@+id/iv1"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="@+id/iv1"
+        app:layout_constraintTop_toTopOf="@+id/iv1"
+        tools:src="@drawable/giovanni_perfil" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile3"
+        android:layout_width="105dp"
+        android:layout_height="99dp"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="125dp"
+        android:src="@drawable/joao_perfil"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv2"
+        app:layout_constraintEnd_toEndOf="@+id/iv2"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="@+id/iv2"
+        app:layout_constraintTop_toTopOf="@+id/iv2"
+        tools:src="@drawable/joao_perfil" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="João Victor"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv2"
+        app:layout_constraintStart_toEndOf="@+id/profile3"
+        app:layout_constraintTop_toTopOf="@+id/iv2" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giovanni Gavassa"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv1"
+        app:layout_constraintStart_toEndOf="@+id/profile2"
+        app:layout_constraintTop_toTopOf="@+id/iv1" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kaick Maia"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv3"
+        app:layout_constraintStart_toEndOf="@+id/profile1"
+        app:layout_constraintTop_toTopOf="@+id/iv3" />
+
+</android.support.constraint.ConstraintLayout>

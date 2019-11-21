@@ -38,6 +38,9 @@ public class ProfileActivity extends AppCompatActivity {
         TextView postDesc = (TextView) findViewById(R.id.profile_post_desc);
         ImageView postImage = (ImageView) findViewById(R.id.profile_post_image);
         ImageView erickWall = (ImageView) findViewById(R.id.imgCover);
+        ImageButton flButton = (ImageButton) findViewById(R.id.btnFriendList);
+
+
 
 
         // Configuração dos botões superiores
@@ -71,6 +74,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 signOut();
+            }
+        });
+
+        flButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FriendListActivity.class);
+                startActivity(intent);
             }
         });
 
